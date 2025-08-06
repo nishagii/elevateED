@@ -1,0 +1,25 @@
+.navigationItem {
+    display: flex;
+    gap: 9px;
+    font-family: Inter, sans-serif;
+    color: rgba(51, 54, 63, 1);
+    white-space: nowrap;
+  }
+  
+  .navigationIcon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 24px;
+    align-self: start;
+  }
+  
+  .navigationText {
+    flex-grow: 1;
+  }
+  
+  .cartCount {
+    color: rgba(255, 0, 0, 1);
+    font-family: Asul, sans-serif;
+    text-align: center;
+  }

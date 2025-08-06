@@ -1,0 +1,24 @@
+.button {
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .primary {
+    background-color: rgba(58, 156, 43, 1);
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  .secondary {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(58, 156, 43, 1);
+    border: 1px solid rgba(58, 156, 43, 1);
+  }
+  
+  .social {
+    background-color: rgba(34, 76, 26, 1);
+    color: rgba(255, 255, 255, 1);
+  }

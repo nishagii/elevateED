@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 80px;
+  position: fixed; /* This fixes the header at the top */
+  top: 0;
+  left: 0; /* Ensure it's positioned at the left edge */
+  width: 100%; /* Make it full width */
+  z-index: 1000;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header-scrolled {
+  height: 70px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+body {
+  margin-top: 80px;
+}
+/* Left section */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  position: relative;
+  margin-right: 15px;
+}
+
+.logo {
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9BE15D 0%, #00E3AE 100%);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 227, 174, 0.4);
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 227, 174, 0.5);
+}
+
+.logo::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(135deg, #9BE15D 0%, #00E3AE 100%);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.3;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+.platformTitle {
+  color: #1E4D2B;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  margin: 0;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #1E4D2B 0%, #3A9C2B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.platform-tagline {
+  color: #666;
+  font-size: 14px;
+  font-weight: 300;
+  margin-left: 12px;
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .platform-tagline {
+    display: inline;
+  }
+}
+
+/* Navigation */
+.header-nav {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  color: #1E4D2B;
+  padding: 0;
+  gap: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #9BE15D 0%, #00E3AE 100%);
+  transition: width 0.3s ease;
+  border-radius: 3px;
+}
+
+.nav-link:hover {
+  color: #3A9C2B;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 70%;
+}
+
+.nav-link.active {
+  color: #3A9C2B;
+  font-weight: 600;
+}
+
+/* Right section */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Auth buttons */
+.auth-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.login-button, .signup-button {
+  padding: 9px 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.login-button {
+  background: transparent;
+  color: #3A9C2B;
+  border: 1.5px solid #3A9C2B;
+}
+
+.login-button:hover {
+  background: rgba(58, 156, 43, 0.1);
+  transform: translateY(-2px);
+}
+
+.signup-button {
+  background: linear-gradient(135deg, #3A9C2B 0%, #1E4D2B 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(58, 156, 43, 0.3);
+}
+
+.signup-button:hover {
+  box-shadow: 0 6px 15px rgba(58, 156, 43, 0.4);
+  transform: translateY(-2px);
+}
+
+/* User profile */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.notification-icon {
+  position: relative;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.notification-icon i {
+  font-size: 20px;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #FF5757;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.notification-icon:hover i {
+  color: #3A9C2B;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+}
+
+.user-info:hover {
+  background: rgba(58, 156, 43, 0.05);
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #3A9C2B;
+  transition: all 0.3s ease;
+}
+
+.user-info:hover .userAvatar {
+  transform: scale(1.05);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1E4D2B;
+  line-height: 1.2;
+}
+
+.user-role {
+  font-size: 12px;
+  color: #666;
+}
+
+.logout-button {
+  background: transparent;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  color: #FF5757;
+  background: rgba(255, 87, 87, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .header-nav {
+    display: none;
+  }
+  
+  .header {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-details {
+    display: none;
+  }
+  
+  .login-button, .signup-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .platformTitle {
+    font-size: 20px;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+  
+  .header {
+    height: 70px;
+  }
+}

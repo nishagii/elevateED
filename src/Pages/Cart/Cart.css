@@ -1,0 +1,244 @@
+/* Base styles */
+.all {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f9f2;
+  color: #333;
+  min-height: 100vh;
+}
+
+.contentContainer {
+  display: flex;
+  position: relative;
+}
+
+/* Cart content container */
+.cartContent {
+  flex: 1;
+  padding: 40px;
+  margin-left: 300px; /* Adjust based on your sidebar width */
+  max-width: 1200px;
+  margin-right: auto;
+}
+
+/* Typography */
+.cartContent h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1E4D2B;
+  position: relative;
+  padding-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.cartContent h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #3A9C2B;
+}
+
+/* Cart items container */
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Individual cart item */
+.cartItem {
+  display: flex;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  border-left: 5px solid #3A9C2B;
+  transition: all 0.3s ease;
+}
+
+.cartItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.cartItem img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 1.5rem;
+}
+
+.cartItemDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartItemDetails h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1E4D2B;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.cartItemDetails p {
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.cartItemDetails .price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #3A9C2B;
+  margin: 0.5rem 0 1rem;
+}
+
+.cartItemButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.enrollButton {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #3A9C2B 0%, #1E4D2B 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.enrollButton:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 77, 43, 0.2);
+}
+
+.removeButton {
+  padding: 0.8rem 1.5rem;
+  background: white;
+  color: #ff3b30;
+  border: 1px solid #ff3b30;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.removeButton:hover {
+  background-color: #fff8f8;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 59, 48, 0.1);
+}
+
+/* Empty cart state */
+.emptyCart {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  margin-top: 2rem;
+}
+
+.emptyCart h3 {
+  font-size: 1.8rem;
+  color: #1E4D2B;
+  margin-bottom: 1rem;
+}
+
+.emptyCart p {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.browseCoursesButton {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #3A9C2B 0%, #1E4D2B 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.browseCoursesButton:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 77, 43, 0.2);
+}
+
+/* Toast container custom styling */
+.Toastify__toast-container {
+  font-family: 'Poppins', sans-serif;
+}
+
+.Toastify__toast {
+  border-radius: 10px;
+}
+
+.Toastify__toast--success {
+  background-color: #ffffff;
+  color: #3A9C2B;
+  border-left: 5px solid #3A9C2B;
+}
+
+.Toastify__progress-bar--success {
+  background-color: #3A9C2B;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .cartContent {
+    margin-left: 0;
+    padding: 20px;
+  }
+  
+  .cartItem {
+    flex-direction: column;
+  }
+  
+  .cartItem img {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .cartContent h2 {
+    font-size: 1.7rem;
+  }
+  
+  .cartItemButtons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .cartItem {
+    padding: 1rem;
+  }
+  
+  .cartItemDetails h3 {
+    font-size: 1.3rem;
+  }
+  
+  .cartItemDetails .price {
+    font-size: 1.1rem;
+  }
+}
